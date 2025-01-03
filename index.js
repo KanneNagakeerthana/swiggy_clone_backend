@@ -11,7 +11,7 @@ const cors = require('cors');
 
 const app = express();
 
-const PORT = 4005;
+const PORT = process.env.PORT|| 4005;
 
 dotEnv.config();
 app.use(cors());
