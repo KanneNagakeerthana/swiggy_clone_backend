@@ -21,6 +21,9 @@ mongoose.connect(process.env.MONGO_URI)
     .catch((error)=>console.log(error))
 
 app.use(bodyparser.json());
+app.use('/',(req, res)=>{
+    res.send("<h1> Welcome to swiggy");
+})
 app.use('/vendor', vendorRoutes);
 app.listen(PORT, ()=> {
     console.log(`server started and running at ${PORT}`);
